@@ -1,0 +1,35 @@
+sudo apt-get update
+sudo apt-get upgrade
+ 
+# Install packages
+sudo apt-get install -y python-pip python-dev build-essential python-software-properties
+sudo apt-get install -y git-core htop nginx ntpdate nano ufw curl wget
+sudo apt-get install -y zlib1g-dev libssl-dev libreadline-dev libyaml-dev libxml2-dev libxslt1-dev libcurl4-openssl-dev
+sudo apt-get install -y libsqlite3-dev sqlite3
+sudo apt-get install -y redis-server
+sudo apt-get install -y nodejs npm
+sudo apt-get install -y ruby ruby-full
+
+# Install packages for Pillow
+sudo apt-get install -y libjpeg-dev libfreetype6-dev zlib1g-dev libpng12-dev
+
+sudo ln -s /usr/lib/x86_64-linux-gnu/libjpeg.so /usr/lib
+sudo ln -s /usr/lib/x86_64-linux-gnu/libfreetype.so /usr/lib
+sudo ln -s /usr/lib/x86_64-linux-gnu/libz.so /usr/lib
+
+# Install Postgres 9.4
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add - 
+sudo apt-get update
+sudo apt-get install -y postgresql-9.4 postgresql-contrib-9.4 postgresql-server-dev-9.4 libpq-dev
+
+# Install pip and virtualenv
+sudo pip install --upgrade pip 
+sudo pip install --upgrade virtualenv 
+
+# Install bower grunt
+sudo npm install -g bower grunt-cli gulp less
+
+# Install sass
+sudo gem install compass
+sudo gem install sass
